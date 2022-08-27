@@ -1,0 +1,21 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdkVersion project.compileSdkVersion.toInteger()
+
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+    }
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion.toInteger()
+        targetSdkVersion project.targetSdkVersion.toInteger()
+    }
+}
+
+dependencies {
+    implementation project(":app")
+}
